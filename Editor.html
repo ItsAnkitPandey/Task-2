@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Task-2</title>
 </head>
+
 <body>
     <header>
         <h1>Editor</h1>
@@ -17,24 +21,25 @@
             <label for="input_icon">
                 Select Image <br>
                 <i class="fa fa-2x fa-camera"></i>
-                <input type="file" name="" id="input_icon" class="input" accept=".png, .jpeg, .jpg" >
+                <input type="file" name="" id="input_icon" class="input" accept=".png, .jpeg, .jpg">
             </label>
             <input type="text" name="" id="tit" class="input" placeholder="Title">
-            <textarea  id="des" class="input" placeholder="Description"></textarea>
+            <textarea id="des" class="input" placeholder="Description"></textarea>
             <a href="index.html" class="button" onclick="passValue()">Done</a>
         </div>
     </div>
     <script>
-        var passValue = function(){
-            
-            var img = document.getElementById("input_icon").value;
+        var passValue = function () {
+
+            var img = document.getElementById("input_icon").value.replace('fakepath\\', '');
             var title = document.getElementById("tit").value;
             var description = document.getElementById("des").value;
 
-           localStorage.setItem('image', img);
-           localStorage.setItem('title', title);
-           localStorage.setItem('description', description);
+            localStorage.setItem('image', img);
+            localStorage.setItem('title', title);
+            localStorage.setItem('description', description);
         }
     </script>
 </body>
+
 </html>
